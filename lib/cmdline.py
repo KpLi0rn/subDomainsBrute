@@ -1,7 +1,7 @@
 import optparse
 import sys
 
-
+# 这个模块里面定义了方法的参数
 def parse_args():
     parser = optparse.OptionParser('usage: %prog [options] target.com',
                                    version="%prog 1.2")
@@ -19,6 +19,8 @@ def parse_args():
                       type='string', help='Output file name. default is {target}.txt')
 
     (options, args) = parser.parse_args()
+    # 解析选项后剩余位置的参数列表 懂了 就是 lijiejie这里是 直接python subdomainsbrutes baidu.com
+    # 就是通过这个命令来进行判定 有没有输入域名 如果没有输入域名的话就提示help
     if len(args) < 1:
         parser.print_help()
         sys.exit(0)

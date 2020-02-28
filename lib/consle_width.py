@@ -3,11 +3,12 @@
  - works on linux,os x,windows,cygwin(windows)
 """
 
-__all__ = ['getTerminalSize']
+import os
+__all__ = ['getTerminalSize']  # 在执行
 
 
 def getTerminalSize():
-    import platform
+    import platform   #  获取使用这个软件的平台
     current_os = platform.system()
     tuple_xy = None
     if current_os == 'Windows':
@@ -91,4 +92,4 @@ def _getTerminalSize_linux():
 
 if __name__ == "__main__":
     sizex, sizey = getTerminalSize()
-    print 'width =', sizex, 'height =', sizey
+    print('width =', sizex, 'height =', sizey)

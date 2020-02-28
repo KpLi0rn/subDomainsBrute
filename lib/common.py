@@ -8,12 +8,12 @@ from lib.consle_width import getTerminalSize
 
 console_width = getTerminalSize()[0] - 2
 
-
+# 进行了一个ip的切片判断
 def is_intranet(ip):
     ret = ip.split('.')
     if len(ret) != 4:
         return True
-    if ret[0] == '10':
+    if ret[0] == '10':   # 后面这几步都是对内网ip进行对判断
         return True
     if ret[0] == '172' and 16 <= int(ret[1]) <= 31:
         return True
